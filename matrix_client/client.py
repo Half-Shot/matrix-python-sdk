@@ -322,6 +322,12 @@ class Room(object):
         """
         return self.client.api.send_emote(self.room_id, text)
 
+    def send_notice(self, text):
+        return self.client.api.send_notice(self.room_id, text)
+
+    # See http://matrix.org/docs/spec/r0.0.1/client_server.html#m-image for the
+    # imageinfo args.
+
     def send_image(self, url, name, **imageinfo):
         """ Send a pre-uploaded image to the room.
         See http://matrix.org/docs/spec/r0.0.1/client_server.html#m-image
